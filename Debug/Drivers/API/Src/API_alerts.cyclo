@@ -1,0 +1,3 @@
+API_alerts.c:21:6:initAlertControl	2
+API_alerts.c:52:6:checkAlertControl	11
+API_alerts.c:98:6:buzzerChangeSound	1

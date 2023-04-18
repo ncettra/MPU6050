@@ -14,7 +14,7 @@
  */
 
 #include "API_MPU6050.h"
-#include "stm32f1xx_hal.h"
+
 
 //REGISTROS I2C, fueron extraidos del Register Map propinados por el fabricante
 #define MPU6050_ADDRESS 0xD0 				//Direccion I2C del MPU6050
@@ -30,7 +30,7 @@
  * @param [in] hi2c: Puntero al delegado i2c donde esta conectado el mpu
  * @return true si inicializo correctamente, false caso contrario
  */
-bool mpuInit(I2C_HandleTypeDef * hi2c){
+bool mpuInit(void* hi2c){
 
 	/*Las configuraciones por ahora son fijas, pero posteriormente se podrian introducir como argumento de funcion
 	 *Lo ideal seria crear una estructura de configuracion, esto es porque cuando recibo, las conversiones dependen
@@ -43,15 +43,16 @@ bool mpuInit(I2C_HandleTypeDef * hi2c){
 	uint8_t accConfig = 0b00000000; //Pag 15
 	uint8_t gyroConfig = 0b00000000; //Pag 14
 
-	HAL_I2C_Mem_Read(hi2c,MPU6050_ADDRESS,MPU6050_WHO_AM_I,1,&data,1,MPU6050_I2C_TIMEOUT);
+	readI2C(hi2c,MPU6050_ADDRESS,MPU6050_WHO_AM_I,1,&data,1,MPU6050_I2C_TIMEOUT);
+
 
 	//Si todo va bien tiene que devolver un 0x68
 	if (data == 0x68){
 		//Ahora vamos a configurar el MPU6050
-		HAL_I2C_Mem_Write(hi2c, MPU6050_ADDRESS, MPU6050_POWER_MGM_REGISTER, 1, &powerManagementData, 1, MPU6050_I2C_TIMEOUT);
-		HAL_I2C_Mem_Write(hi2c, MPU6050_ADDRESS, MPU6050_SAMPLING_DIV_REGISTER, 1, &updateDataRate, 1, MPU6050_I2C_TIMEOUT);
-		HAL_I2C_Mem_Write(hi2c, MPU6050_ADDRESS, MPU6050_ACC_CONFIG_REGISTER, 1, &accConfig, 1, MPU6050_I2C_TIMEOUT);
-		HAL_I2C_Mem_Write(hi2c, MPU6050_ADDRESS, MPU6050_GYRO_CONFIG_REGISTER, 1, &gyroConfig, 1, MPU6050_I2C_TIMEOUT);
+		writeI2C(hi2c, MPU6050_ADDRESS, MPU6050_POWER_MGM_REGISTER, 1, &powerManagementData, 1, MPU6050_I2C_TIMEOUT);
+		writeI2C(hi2c, MPU6050_ADDRESS, MPU6050_SAMPLING_DIV_REGISTER, 1, &updateDataRate, 1, MPU6050_I2C_TIMEOUT);
+		writeI2C(hi2c, MPU6050_ADDRESS, MPU6050_ACC_CONFIG_REGISTER, 1, &accConfig, 1, MPU6050_I2C_TIMEOUT);
+		writeI2C(hi2c, MPU6050_ADDRESS, MPU6050_GYRO_CONFIG_REGISTER, 1, &gyroConfig, 1, MPU6050_I2C_TIMEOUT);
 		return true;
 	}
 	else{
@@ -69,7 +70,7 @@ void mpuUpdate(I2C_HandleTypeDef * hi2c, mpu6050_t * mpu){
 
 	uint8_t data[14];
 
-	HAL_I2C_Mem_Read(hi2c, MPU6050_ADDRESS, MPU6050_ALLDATA_READ_REGISTER, 1, data, 14, MPU6050_I2C_TIMEOUT);
+	readI2C(hi2c, MPU6050_ADDRESS, MPU6050_ALLDATA_READ_REGISTER, 1, data, 14, MPU6050_I2C_TIMEOUT);
 	//Es importante que la RAW DATA sea con signo, porque sino, para valores menores a cero no se le interpreta el modulo a 2 y salta de 0 a 65365
 	int16_t accX = ((uint16_t)data[0]<<8)+data[1];
 	int16_t accY = ((uint16_t)data[2]<<8)+data[3];

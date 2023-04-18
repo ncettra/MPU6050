@@ -2,6 +2,7 @@ Drivers/API/Src/API_alerts.o: ../Drivers/API/Src/API_alerts.c \
  C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_alerts.h \
  C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_delay.h \
  C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_MPU6050.h \
+ C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/STM32F1_port.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -29,6 +30,7 @@ Drivers/API/Src/API_alerts.o: ../Drivers/API/Src/API_alerts.c \
 C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_alerts.h:
 C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_delay.h:
 C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_MPU6050.h:
+C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/STM32F1_port.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:

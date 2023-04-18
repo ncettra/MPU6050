@@ -1,0 +1,2 @@
+STM32F1_port.c:9:6:readI2C	1
+STM32F1_port.c:14:6:writeI2C	1

@@ -1,2 +1,2 @@
 ../Drivers/API/Src/API_MPU6050.c:33:6:mpuInit	40	static
-../Drivers/API/Src/API_MPU6050.c:68:6:mpuUpdate	64	static
+../Drivers/API/Src/API_MPU6050.c:69:6:mpuUpdate	64	static

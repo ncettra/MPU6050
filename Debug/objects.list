@@ -8,6 +8,8 @@
 "./Drivers/API/Src/API_MPU6050.o"
 "./Drivers/API/Src/API_alerts.o"
 "./Drivers/API/Src/API_delay.o"
+"./Drivers/API/Src/STM32F1_port.o"
+"./Drivers/API/Src/STM32F4_port.o"
 "./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
 "./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
 "./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"

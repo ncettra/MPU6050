@@ -18,7 +18,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include "stm32f1xx_hal.h"
+#include "STM32F1_port.h"
 
 #define MPU6050_I2C_TIMEOUT 1000
 
@@ -37,7 +37,7 @@ typedef struct{
 } mpu6050_t;
 
 
-bool mpuInit(I2C_HandleTypeDef * hi2c1);
+bool mpuInit(void * hi2c1);
 void mpuUpdate(I2C_HandleTypeDef * hi2c1, mpu6050_t * mpu);
 
 #endif /* API_INC_API_MPU6050_H_ */

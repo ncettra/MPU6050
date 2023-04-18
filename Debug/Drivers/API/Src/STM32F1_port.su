@@ -1,0 +1,2 @@
+../Drivers/API/Src/STM32F1_port.c:9:6:readI2C	40	static
+../Drivers/API/Src/STM32F1_port.c:14:6:writeI2C	40	static

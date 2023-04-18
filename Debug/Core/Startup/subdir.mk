@@ -16,7 +16,7 @@ S_DEPS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 Core/Startup/%.o: ../Core/Startup/%.s Core/Startup/subdir.mk
-	arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -I"C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API" -I"C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc" -I"C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Src" -x assembler-with-cpp -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -I"C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API" -I"C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc" -I"C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Src" -I"C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers" -x assembler-with-cpp -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@" "$<"
 
 clean: clean-Core-2f-Startup
 

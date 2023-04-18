@@ -25,6 +25,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_delay.h \
  C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_MPU6050.h \
+ C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/STM32F1_port.h \
  C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_alerts.h \
  C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_delay.h \
  C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_MPU6050.h
@@ -55,6 +56,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_delay.h:
 C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_MPU6050.h:
+C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/STM32F1_port.h:
 C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_alerts.h:
 C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_delay.h:
 C:/Users/Nicolas/STM32CubeIDE/workspace_1.12.0/TP_FINAL_PDM/Drivers/API/Inc/API_MPU6050.h:

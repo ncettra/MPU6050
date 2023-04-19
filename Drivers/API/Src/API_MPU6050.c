@@ -66,7 +66,7 @@ bool mpuInit(void* hi2c){
  * @param [in] hi2c: Puntero al delegado i2c donde esta conectado el mpu
  * @param [in] mpu: Puntero a la estructura de datos del mpu6050
  */
-void mpuUpdate(I2C_HandleTypeDef * hi2c, mpu6050_t * mpu){
+void mpuUpdate(void* hi2c, mpu6050_t * mpu){
 
 	uint8_t data[14];
 

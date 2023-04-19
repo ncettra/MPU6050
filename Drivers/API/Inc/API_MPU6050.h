@@ -38,6 +38,6 @@ typedef struct{
 
 
 bool mpuInit(void * hi2c1);
-void mpuUpdate(I2C_HandleTypeDef * hi2c1, mpu6050_t * mpu);
+void mpuUpdate(void* hi2c1, mpu6050_t * mpu);
 
 #endif /* API_INC_API_MPU6050_H_ */

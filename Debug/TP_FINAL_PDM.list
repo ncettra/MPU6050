@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  000201f8  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000a081  00000000  00000000  00020221  2**0
+ 12 .debug_info   00009b9d  00000000  00000000  00020221  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00001c83  00000000  00000000  0002a2a2  2**0
+ 13 .debug_abbrev 00001c06  00000000  00000000  00029dbe  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000a28  00000000  00000000  0002bf28  2**3
+ 14 .debug_aranges 00000a28  00000000  00000000  0002b9c8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00000978  00000000  00000000  0002c950  2**3
+ 15 .debug_ranges 00000978  00000000  00000000  0002c3f0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00018b69  00000000  00000000  0002d2c8  2**0
+ 16 .debug_macro  00018b69  00000000  00000000  0002cd68  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000d221  00000000  00000000  00045e31  2**0
+ 17 .debug_line   0000d221  00000000  00000000  000458d1  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008680b  00000000  00000000  00053052  2**0
+ 18 .debug_str    0008680b  00000000  00000000  00052af2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000d985d  2**0
+ 19 .comment      00000050  00000000  00000000  000d92fd  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00003b74  00000000  00000000  000d98b0  2**2
+ 20 .debug_frame  00003b74  00000000  00000000  000d9350  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -2854,7 +2854,7 @@ bool mpuInit(void* hi2c){
  * @param [in] hi2c: Puntero al delegado i2c donde esta conectado el mpu
  * @param [in] mpu: Puntero a la estructura de datos del mpu6050
  */
-void mpuUpdate(I2C_HandleTypeDef * hi2c, mpu6050_t * mpu){
+void mpuUpdate(void* hi2c, mpu6050_t * mpu){
  80016e0:	b580      	push	{r7, lr}
  80016e2:	b08e      	sub	sp, #56	; 0x38
  80016e4:	af04      	add	r7, sp, #16

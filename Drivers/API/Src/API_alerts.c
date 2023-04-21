@@ -9,7 +9,7 @@
 
 static alertState_t EstadoActual;
 static delay_t BuzzerDelay;
-static delay_t switchStateDelay;
+static delay_t SwitchStateDelay;
 static float AccMax = 0.5;
 
 const char* FSM_INIT_MSG = "\n\rFSM init";
@@ -28,7 +28,7 @@ void initAlertControl(float accMax, uint16_t buttonDelay,UART_HandleTypeDef * ua
 	EstadoActual = ADQUIRIENDO_DATOS;
 	AccMax = accMax;
 	delayInit(&BuzzerDelay, 700);
-	delayInit(&switchStateDelay, buttonDelay);
+	delayInit(&SwitchStateDelay, buttonDelay);
 
 	/*HAL_UART_Transmit(uart,(uint8_t *)"AT\n\r",strlen("AT\n\r"),10);
 	HAL_Delay(1000);
@@ -69,11 +69,11 @@ void checkAlertControl(mpu6050_t* mpu, UART_HandleTypeDef * uart){
 		//Comprobacion de boton con antirebote
 		if( !HAL_GPIO_ReadPin(BUTTON1_GPIO_Port,BUTTON1_Pin)){
 			//Si es un falso contacto se reinicia el delay
-			delayRestart(&switchStateDelay);
+			delayRestart(&SwitchStateDelay);
 		}
 		else{
 
-			if(delayRead(&switchStateDelay)){
+			if(delayRead(&SwitchStateDelay)){
 				EstadoActual = ALERTA;
 				HAL_UART_Transmit(uart,(uint8_t *)FSM_TO_ALARM_MSG,strlen(FSM_TO_ALARM_MSG),10);
 				buzzerChangeSound();
@@ -86,11 +86,11 @@ void checkAlertControl(mpu6050_t* mpu, UART_HandleTypeDef * uart){
 		}
 		if( !HAL_GPIO_ReadPin(BUTTON1_GPIO_Port,BUTTON1_Pin)){
 
-			delayRestart(&switchStateDelay);
+			delayRestart(&SwitchStateDelay);
 		}
 		else{
 
-			if(delayRead(&switchStateDelay)){EstadoActual = ADQUIRIENDO_DATOS; HAL_UART_Transmit(uart,(uint8_t *)FSM_TO_DATA_AQ_MSG,strlen(FSM_TO_DATA_AQ_MSG),10);}
+			if(delayRead(&SwitchStateDelay)){EstadoActual = ADQUIRIENDO_DATOS; HAL_UART_Transmit(uart,(uint8_t *)FSM_TO_DATA_AQ_MSG,strlen(FSM_TO_DATA_AQ_MSG),10);}
 		}
 
 		break;
